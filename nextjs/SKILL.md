@@ -68,7 +68,7 @@ Refer to [references/core-web-vitals.md](./references/core-web-vitals.md) and [r
 
 ### Phase 3: React & Next.js Code Optimization (Server-First & No-useEffect Doctrine)
 
-Refer to [references/react-best-practices.md](./references/react-best-practices.md):
+Refer to [AGENTS.md](./AGENTS.md) (Vercel Engineering's full 8-category React/Next.js rulebook; read its Table of Contents first and inspect only relevant sections) and [references/react-best-practices.md](./references/react-best-practices.md):
 
 - **Golden Rule 1: Strictly Restrict Client-Side Rendering (CSR):**
   - **Server Components (RSC) by Default:** Never add `'use client'` to layouts, page routes, or data-fetching components.
@@ -171,6 +171,7 @@ Refer to [references/vercel-optimization.md](./references/vercel-optimization.md
 
 Read these reference files progressively when executing targeted phases:
 
+- [`AGENTS.md`](./AGENTS.md): Full Vercel Engineering React & Next.js Best Practices guide (40+ rules across 8 categories with Incorrect/Correct examples). Read the Table of Contents (lines 21–101) first and load only the relevant sections to preserve context.
 - [`references/server-actions-and-mutations.md`](./references/server-actions-and-mutations.md): Server Actions error protocol, Next.js 15 async request APIs, React 19 `useActionState`.
 - [`references/react-best-practices.md`](./references/react-best-practices.md): The 70 prioritized Vercel rules (waterfalls, bundle, server vs client, rerenders).
 - [`references/typescript-best-practices.md`](./references/typescript-best-practices.md): TypeScript discipline, discriminated unions, branded types, and schema validation.
@@ -188,6 +189,7 @@ Read these reference files progressively when executing targeted phases:
 ## Verification & Audit
 
 Before completing changes, run the automated static audit (supports `--strict` for CI/agent loops):
+
 ```bash
 ./scripts/audit-performance.sh src/ --strict
 ```
